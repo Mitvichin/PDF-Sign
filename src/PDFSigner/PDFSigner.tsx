@@ -43,12 +43,12 @@ const signsProps: Sign[] = [
   { userId: 3, name: "Geri", placement: { x: -1, y: -1 } },
 ];
 
-setCookie("signs", JSON.stringify(signsProps));
-
 export const PDFSigner: React.FC<{ file: File }> = ({ file }) => {
   const [activeSign, setActiveSign] = useState<Sign | null>(null);
   const [mousePlacement, setMousePlacements] = useState({ x: -1, y: -1 });
-  const [signs, setSigns] = useState<Sign[]>(JSON.parse(getCookie("signs")));
+  const [signs, setSigns] = useState<Sign[]>(
+    JSON.parse(getCookie("signs")) || signsProps
+  );
   const [isPlacing, setIsPlacing] = useState(false);
 
   useEffect(() => {
@@ -101,7 +101,13 @@ export const PDFSigner: React.FC<{ file: File }> = ({ file }) => {
 
   return (
     <>
-      <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          marginBottom: "10px",
+        }}
+      >
         <div style={btnStyles} onClick={onPlaceSignClick}>
           Place sign
         </div>

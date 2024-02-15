@@ -17,11 +17,7 @@ function App() {
         style={{
           width: "100%",
           height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "10px",
+          maxWidth: "1000px",
         }}
       >
         <div
@@ -31,11 +27,12 @@ function App() {
           names and the click 'Place sign', then move the mouse to the desired
           place and click. Repeate for other names. Position for a sign is
           saved. You can reload the page open the pdf again and it will display
-          then on the correct spot.
+          then on the correct spot.{" "}
+          <a href="https://github.com/Mitvichin/PDF-Sign">Source code</a>
         </div>
-        <input type="file" onChange={handleFileInputChange} />
-        {file && <PDFSigner file={file} />}
       </div>
+      <input type="file" onChange={handleFileInputChange} />
+      {file && <PDFSigner file={file} />}
     </>
   );
 }
