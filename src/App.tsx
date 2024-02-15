@@ -24,10 +24,10 @@ function App() {
           style={{ marginBottom: "10px", color: "rgba(207, 112, 112, 0.8)" }}
         >
           * In order to place a sign placeholder, please click on one of the
-          names and the click 'Place sign', then move the mouse to the desired
-          place and click. Repeate for other names. Position for a sign is
-          saved. You can reload the page open the pdf again and it will display
-          then on the correct spot.{" "}
+          names and then click 'Place sign', then move the mouse to the desired
+          place and click. Repeat for the other names. Position for a sign is
+          saved. You can reload the page, open the pdf again and it will display
+          them on the correct spot.{" "}
           <a href="https://github.com/Mitvichin/PDF-Sign">Source code</a>
         </div>
       </div>
